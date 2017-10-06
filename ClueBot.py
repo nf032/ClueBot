@@ -106,7 +106,7 @@ async def clue2(ctx):
 async def clue3(ctx):
     await client.say("!clear 1")
     await asyncio.sleep(2)
-    await client.send_message(ctx.message.author,"PLACE SNAPCODE HERE")
+    await client.send_message(ctx.message.author,"http://www.nathanf.co.uk/wp-content/uploads/2017/10/snapcode.png")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 3!".format(ctx.message.author))
 
 #clue4: Calverley Grounds to The Forum
