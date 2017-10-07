@@ -120,10 +120,11 @@ async def clue4(ctx):
 @client.command(pass_context=True)
 async def clue5(ctx):
     await client.say("!clear 1")
-	await client.send_message(ctx.message.author,"The next clue is on a website, http://nathanf.co.uk/twcavenger/clue-2 (CBA to change the web address). But it is locked. You need to use your knowledge of alogrithms to obtain the password.")
+    await client.send_message(ctx.message.author,"The next clue is on a website, http://nathanf.co.uk/twcavenger/clue-2 (CBA to change the web address). But it is locked. You need to use your knowledge of alogrithms to obtain the password.")
     await client.send_message(ctx.message.author,"My brother goes to Boys Grammar. His name is Joel Friend, and he is in Year 8. If he went to SKA, what would his username be? The username is all lowercase.")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 5!".format(ctx.message.author))
 
+#clue6: Tunbridge Wells Library to Lower Common
 @client.command(pass_context=True)
 async def clue6(ctx):
     await client.say("!clear 1")
