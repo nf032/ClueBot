@@ -1,5 +1,6 @@
 language: python
-rvm:
- - 3.5
- - discord
- - requests
+python:
+ - "3.5"
+ 
+install: pip install --user discord.py
+install: pip install --user requests
