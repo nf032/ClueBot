@@ -2,5 +2,6 @@ language: python
 python:
  - "3.5"
  
-install: pip install discord.py
-install: pip install requests
+install:
+ - pip install discord.py
+ - pip install requests
