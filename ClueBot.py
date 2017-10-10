@@ -12,7 +12,7 @@ from discord.ext import commands
 logging.basicConfig(level=logging.INFO)
 
 Client = discord.Client()
-bot_prefix= "s."
+bot_prefix= "b."
 client = commands.Bot(command_prefix=bot_prefix)
 
 @client.event
@@ -59,6 +59,20 @@ async def woof(ctx):
     js = r.json()
     await client.send_message(ctx.message.channel, js["url"])
 
+#progresschecker
+@client.command(pass_context=True)
+async def prgress(ctx):
+    if ctx.message.author=="spookydipity#7055":
+        progress=[]
+        file=open("progress.txt","r")
+        progress=file.readLines()
+        file.close
+        client.send_message(ctx.message.author,progress)
+        embed = discord.Embed(title = "Success!", description = "Check your DMs!", color = 0xFFFFF)
+        return await client.say(embed = embed)
+    else:
+        embed = discord.Embed(title="Permission Denied!", description="Yo are not authorised to use this command.", color=0xFFFFF)
+
 #clue1: Salisbury Park to Skinners' Field
 @client.command(pass_context=True)
 async def clue1(ctx):
@@ -94,6 +108,9 @@ async def clue2(ctx):
     await asyncio.sleep(2)
     await client.send_message(ctx.message.author,"http://spoti.fi/2tAHjHw")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 2!".format(ctx.message.author))
+    file=open("progress.txt","w")
+    file.write("{} is at Clue 2".format(ctx.message.author)+"\n")
+    file.close()
 
 #clue3: TWGSB to Calverley Grounds
 @client.command(pass_context=True)
@@ -114,7 +131,7 @@ async def clue4(ctx):
 @client.command(pass_context=True)
 async def clue5(ctx):
     await client.say("!clear 1")
-    await client.send_message(ctx.message.author,"The next clue is on a website, http://nathanf.co.uk/twcavenger/clue-2 (CBA to change the web address). But it is locked. You need to use your knowledge of alogrithms to obtain the password.")
+    await client.send_message(ctx.message.author,"The next clue is on a website, http://nathanf.co.uk/twcavenger/clue-2 (CBA to change the web address). But it is locked. You need to use your knowledge of algorithms to obtain the password.")
     await client.send_message(ctx.message.author,"My brother goes to Boys Grammar. His name is Joel Friend, and he is in Year 8. If he went to SKA, what would his username be? The username is all lowercase.")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 5!".format(ctx.message.author))
 
