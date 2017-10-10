@@ -12,7 +12,7 @@ from discord.ext import commands
 logging.basicConfig(level=logging.INFO)
 
 Client = discord.Client()
-bot_prefix= "b."
+bot_prefix= "s."
 client = commands.Bot(command_prefix=bot_prefix)
 
 @client.event
@@ -59,20 +59,6 @@ async def woof(ctx):
     js = r.json()
     await client.send_message(ctx.message.channel, js["url"])
 
-#progresschecker
-@client.command(pass_context=True)
-async def prgress(ctx):
-    if ctx.message.author=="spookydipity#7055":
-        progress=[]
-        file=open("progress.txt","r")
-        progress=file.readLines()
-        file.close
-        client.send_message(ctx.message.author,progress)
-        embed = discord.Embed(title = "Success!", description = "Check your DMs!", color = 0xFFFFF)
-        return await client.say(embed = embed)
-    else:
-        embed = discord.Embed(title="Permission Denied!", description="Yo are not authorised to use this command.", color=0xFFFFF)
-
 #clue1: Salisbury Park to Skinners' Field
 @client.command(pass_context=True)
 async def clue1(ctx):
@@ -97,9 +83,6 @@ async def clue12(ctx):
     await asyncio.sleep(2)
     await client.send_message("A place to see the opposite to the sea, kept by our sister school under lock and key.")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 1.2!".format(ctx.message.author))
-    file=open("progress.txt","w")
-    file.write("{} is at Clue 2".format(ctx.message.author)+"\n")
-    file.close()
 
 #clue2: Skinners' Field to TWGSB
 @client.command(pass_context=True)
@@ -108,9 +91,6 @@ async def clue2(ctx):
     await asyncio.sleep(2)
     await client.send_message(ctx.message.author,"http://spoti.fi/2tAHjHw")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 2!".format(ctx.message.author))
-    file=open("progress.txt","w")
-    file.write("{} is at Clue 2".format(ctx.message.author)+"\n")
-    file.close()
 
 #clue3: TWGSB to Calverley Grounds
 @client.command(pass_context=True)
@@ -142,4 +122,4 @@ async def clue6(ctx):
     await client.send_message(ctx.message.author,"TQ 580 394")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 6!".format(ctx.message.author))
 
-client.run("MzY3MzA1MTI4NzU3NDI4MjI0.DL5fEQ.Ufl10ixfOv0Oj5I4NJPaGynI1Sk")
+client.run("MzM2MDg5NTU1Mjg1NDQyNTYx.DL6O5A.gLZyA72MidfMlU5YjRM4VMBmm5U")
