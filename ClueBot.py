@@ -36,15 +36,6 @@ async def restart(ctx):
     os.execv(sys.executable, ["python3.6"] + sys.argv)
     exit()
 
-#command1
-#@client.command(pass_context = True)
-#async def invite(ctx):
-#    x = await client.invites_from(ctx.message.server)
-#    x = ["<" + y.url + ">" for y in x]
-#    print(x)
-#    embed = discord.Embed(title = "Invite Links", description = x, color = 0xFFFFF)
-#    return await client.say(embed = embed)
-
 #command2
 @client.command(pass_context = True)
 async def getbans(ctx):
@@ -120,7 +111,7 @@ async def clue4(ctx):
 @client.command(pass_context=True)
 async def clue5(ctx):
     await client.say("!clear 1")
-    await client.send_message(ctx.message.author,"The next clue is on a website, http://nathanf.co.uk/twcavenger/clue-2 (CBA to change the web address). But it is locked. You need to use your knowledge of alogrithms to obtain the password.")
+    await client.send_message(ctx.message.author,"The next clue is on a website, http://nathanf.co.uk/twcavenger/clue-2 (CBA to change the web address). But it is locked. You need to use your knowledge of algorithms to obtain the password.")
     await client.send_message(ctx.message.author,"My brother goes to Boys Grammar. His name is Joel Friend, and he is in Year 8. If he went to SKA, what would his username be? The username is all lowercase.")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 5!".format(ctx.message.author))
 
@@ -131,4 +122,4 @@ async def clue6(ctx):
     await client.send_message(ctx.message.author,"TQ 580 394")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 6!".format(ctx.message.author))
 
-client.run("MzM2MDg5NTU1Mjg1NDQyNTYx.DEzTjQ.fL4TLOO_zv8Xu1yImZrG0GYJXRs")
+client.run("MzM2MDg5NTU1Mjg1NDQyNTYx.DL6O5A.gLZyA72MidfMlU5YjRM4VMBmm5U")
