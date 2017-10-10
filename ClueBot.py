@@ -36,15 +36,6 @@ async def restart(ctx):
     os.execv(sys.executable, ["python3.6"] + sys.argv)
     exit()
 
-#command1
-#@client.command(pass_context = True)
-#async def invite(ctx):
-#    x = await client.invites_from(ctx.message.server)
-#    x = ["<" + y.url + ">" for y in x]
-#    print(x)
-#    embed = discord.Embed(title = "Invite Links", description = x, color = 0xFFFFF)
-#    return await client.say(embed = embed)
-
 #command2
 @client.command(pass_context = True)
 async def getbans(ctx):
@@ -92,6 +83,9 @@ async def clue12(ctx):
     await asyncio.sleep(2)
     await client.send_message("A place to see the opposite to the sea, kept by our sister school under lock and key.")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 1.2!".format(ctx.message.author))
+    file=open("progress.txt","w")
+    file.write("{} is at Clue 2".format(ctx.message.author)+"\n")
+    file.close()
 
 #clue2: Skinners' Field to TWGSB
 @client.command(pass_context=True)
@@ -131,4 +125,4 @@ async def clue6(ctx):
     await client.send_message(ctx.message.author,"TQ 580 394")
     await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 6!".format(ctx.message.author))
 
-client.run("MzM2MDg5NTU1Mjg1NDQyNTYx.DEzTjQ.fL4TLOO_zv8Xu1yImZrG0GYJXRs")
+client.run("MzY3MzA1MTI4NzU3NDI4MjI0.DL5fEQ.Ufl10ixfOv0Oj5I4NJPaGynI1Sk")
