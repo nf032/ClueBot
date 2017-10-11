@@ -69,20 +69,13 @@ async def clue1(ctx):
     await client.say("To unlock the next clue, sned an s. command with the people you think committed the crime in alphabetical order and in lower case.")
     await client.say("For example, if you think robbie and tambry committed the crime, type s.robbietambry")
 
-#clue1.1: Salisbury Park to Skinners' Field
+#clue1.1: Salisbury PArk to Skinners' Field
 @client.command(pass_context=True)
-async def gideontambry(ctx):
+async def clue12(ctx, user):
     await client.say("!clear 1")
     await asyncio.sleep(2)
-    await client.send_message(ctx.message.author,"Use command clue12 to get your next clue!")
-
-#clue1.2: Salisbury PArk to Skinners' Field
-@client.command(pass_context=True)
-async def clue12(ctx):
-    await client.say("!clear 1")
-    await asyncio.sleep(2)
-    await client.send_message("A place to see the opposite to the sea, kept by our sister school under lock and key.")
-    await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 1.2!".format(ctx.message.author))
+    await client.send_message(discord.Object(user),"A place to see the opposite to the sea, kept by our sister school under lock and key.")
+    await client.send_message(discord.Object(id="347403986543968267"),"{} just accessed Clue 1.1!".format(user))
 
 #clue2: Skinners' Field to TWGSB
 @client.command(pass_context=True)
